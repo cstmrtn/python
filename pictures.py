@@ -25,7 +25,7 @@ def main(page: ft.Page):
             with open(selected_file.path, "rb") as r:
                 image_holder.src_base64 = base64.b64encode(r.read()).decode("utf-8")
                 image_holder.visible = True
-                img_info.value = f"Fájlnév: {selected_file.name}, Méret: {selected_file.size // 1024} KB"
+                img_info.value = f"\nFájlnév: {selected_file.name} \nMéret: {selected_file.size // 1024} KB"
                 img_info.visible = True
                 kep_container.border = ft.border.all(2, color=ft.colors.BLACK)
                 page.update()
