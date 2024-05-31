@@ -9,6 +9,8 @@ class ControlEvent:
 
 
 def main(page: ft.Page):
+    page.window_width = 400
+    page.window_height = 600
     page.title = 'Bejelentkezés'
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
