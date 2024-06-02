@@ -1,10 +1,8 @@
 import flet as ft
-import openai
+from openai import OpenAI
 import time
 import threading
 
-# Az OpenAI API kulcsod
-openai.api_key = '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'
 
 def main_style() -> dict[str, any]:
     return {
@@ -65,10 +63,12 @@ class Prompt(ft.TextField):
         
     def gpt_output(self, prompt):
         try:
-            response = openai.ChatCompletion.create(
+            response = client.embeddings.create(
                 model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": prompt}]
             )
+            client = OpenAI(api_key="sk-proj-hjRe0SbKKosGUGIiVSrPT3BlbkFJTJirgjefTwlDsH27t4MS")
+            completion = client.chat.completions.create
             response_text = response.choices[0].message.content.strip()
             self.animate_text_output(name="ChatGPT", prompt=response_text)
         except Exception as e:
