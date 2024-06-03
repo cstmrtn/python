@@ -10,7 +10,7 @@ def main(page: ft.Page):
     page.window_resizable = False
 
     JoValasz = 0
-    jelenlegi_valasz = 0
+    jelenlegi_valasz = -1
 
     def check_answer(e):
         nonlocal JoValasz
