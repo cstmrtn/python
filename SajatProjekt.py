@@ -14,6 +14,7 @@ def main(page: ft.Page):
     page.title = 'Bejelentkezés'
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    page.theme_mode = ft.ThemeMode.DARK
     
 
     tb1: TextField = TextField(label="Username", width=350, border_color="red", cursor_color="red",)
